@@ -10,104 +10,55 @@
 
   </style>
   <body>
-<nav id="dynamic-menu">
-  <ul id="menu-list">Loading pages...</ul>
-</nav>
+    <nav id="dynamic-menu">
+    <ul id="menu-list">Loading pages...</ul>
+    </nav>
 
-<script>
-  // Your repository details from GitHub Pages settings
-  const username = 'hrnkovocesstvo';
-  const repo = 'nic-se-tu-nedeje';
-  
-  // Change this to the target folder in your main branch (e.g., 'posts', 'docs', 'pages')
-  const targetFolder = 'YOUR_FOLDER_NAME'; 
+    <script>
+    // Your repository details from GitHub Pages settings
+    const username = 'hrnkovocesstvo';
+    const repo = 'nic-se-tu-nedeje';
+    
+    // Change this to the target folder in your main branch (e.g., 'posts', 'docs', 'pages')
+    const targetFolder = '/prace'; 
 
-  async function loadFolderMenu() {
-    const listElement = document.getElementById('menu-list');
-    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${targetFolder}`;
+    async function loadFolderMenu() {
+        const listElement = document.getElementById('menu-list');
+        const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${targetFolder}`;
 
-    try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error('Folder not found or API limit reached');
+        try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Folder not found or API limit reached');
 
-      const files = await response.json();
-      listElement.innerHTML = ''; // Clear loading message
+        const files = await response.json();
+        listElement.innerHTML = ''; // Clear loading message
 
-      files.forEach(file => {
-        // Filter for HTML or Markdown files and exclude index files
-        if (file.type === 'file' && (file.name.endsWith('.html') || file.name.endsWith('.md')) && !file.name.startsWith('index')) {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
+        files.forEach(file => {
+            // Filter for HTML or Markdown files and exclude index files
+            if (file.type === 'file' && (file.name.endsWith('.html') || file.name.endsWith('.md')) && !file.name.startsWith('index')) {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
 
-          // Convert 'my-first-page.html' to 'My first page'
-          const pageTitle = file.name
-            .replace(/\.(html|md)$/, '')
-            .replace(/[-_]/g, ' ');
+            // Convert 'my-first-page.html' to 'My first page'
+            const pageTitle = file.name
+                .replace(/\.(html|md)$/, '')
+                .replace(/[-_]/g, ' ');
 
-          // Set path relative to your site root
-          a.href = `/${repo}/${targetFolder}/${file.name}`;
-          a.textContent = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
+            // Set path relative to your site root
+            a.href = `/${repo}/${targetFolder}/${file.name}`;
+            a.textContent = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
 
-          li.appendChild(a);
-          listElement.appendChild(li);
+            li.appendChild(a);
+            listElement.appendChild(li);
+            }
+        });
+        } catch (err) {
+        console.error(err);
+        listElement.innerHTML = '<li>Unable to load directory contents.</li>';
         }
-      });
-    } catch (err) {
-      console.error(err);
-      listElement.innerHTML = '<li>Unable to load directory contents.</li>';
     }
-  }
 
-  loadFolderMenu();
-</script><nav id="dynamic-menu">
-  <ul id="menu-list">Loading pages...</ul>
-</nav>
-
-<script>
-  // Your repository details from GitHub Pages settings
-  const username = 'hrnkovocesstvo';
-  const repo = 'nic-se-tu-nedeje';
-  
-  // Change this to the target folder in your main branch (e.g., 'posts', 'docs', 'pages')
-  const targetFolder = 'YOUR_FOLDER_NAME'; 
-
-  async function loadFolderMenu() {
-    const listElement = document.getElementById('menu-list');
-    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${targetFolder}`;
-
-    try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error('Folder not found or API limit reached');
-
-      const files = await response.json();
-      listElement.innerHTML = ''; // Clear loading message
-
-      files.forEach(file => {
-        // Filter for HTML or Markdown files and exclude index files
-        if (file.type === 'file' && (file.name.endsWith('.html') || file.name.endsWith('.md')) && !file.name.startsWith('index')) {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-
-          // Convert 'my-first-page.html' to 'My first page'
-          const pageTitle = file.name
-            .replace(/\.(html|md)$/, '')
-            .replace(/[-_]/g, ' ');
-
-          // Set path relative to your site root
-          a.href = `/${repo}/${targetFolder}/${file.name}`;
-          a.textContent = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
-
-          li.appendChild(a);
-          listElement.appendChild(li);
-        }
-      });
-    } catch (err) {
-      console.error(err);
-      listElement.innerHTML = '<li>Unable to load directory contents.</li>';
-    }
-  }
-
-  loadFolderMenu();
-</script>
+    loadFolderMenu();
+    </script>
   </body>
 </html>
