@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cz">
+  <head>
+    <title>formular registracni</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <style>
+
+  </style>
+  <body>
+    <h1>registracni formular</h1>
+
+    <form name="dotaznik">
+        <p><strong>Titul před:</strong> <input type="text" size="15" name="titulPred">
+            <strong>Jmeno:</strong> <input type="text" size="60" name="jmeno">
+            <strong>Prijmení:</strong> <input type="text" size="40" name="prijmeni">
+            <strong>Titul za:</strong> <input type="text" size="15" name="titulZa"></p>
+
+        <p><strong>Email:</strong> <input type="email" size="50" name="email"></p>
+
+        <p><strong>Pohlaví:</strong><br>
+        <input type="radio" value="muž" checked name="pohlavi"> muž
+        <input type="radio" value="žena" name="pohlavi"> žena
+        <input type="radio" value="jine" name="pohlavi">jiné</p>
+
+        <p><strong>Zájmy:</strong>
+        <input type="checkbox" checked name="c1" value="ON">turistika
+        <input type="checkbox" checked name="c2" value="ON">cyklistika
+        <input type="checkbox" name="c3" value="ON">tenis
+        <input type="checkbox" name="c4" value="ON">lyžováni
+        <input type="checkbox" name="c5" value="ON">kino
+        <input type="checkbox" name="c6" value="ON">pc hry</p>
+    </form>
+</body>
+</html>
