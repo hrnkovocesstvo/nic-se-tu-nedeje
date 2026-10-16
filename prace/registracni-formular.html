@@ -12,11 +12,15 @@
         background-color: black;
     }   
 
-    input {
+    input, textarea {
         background-color: transparent;
         color: white;
         accent-color: black;
-        border-color: transparent;
+        border-color: gray;
+    }
+    
+    input:hover, input:active, textarea:hover, textarea:active {
+        border-color: blue;
     }
   </style>
   <body>
@@ -24,9 +28,9 @@
 
     <form name="dotaznik">
         <p><strong>Titul před:</strong> <input type="text" size="15" name="titulPred">
-            <strong>Jmeno:</strong> <input id="jmin" type="text" size="60" name="jmeno">
-            <strong>Prijmení:</strong> <input type="text" size="40" name="prijmeni">
-            <strong>Titul za:</strong> <input type="text" size="15" name="titulZa"></p>
+        <strong>Jmeno:</strong> <input id="jmin" type="text" size="60" name="jmeno">
+        <strong>Prijmení:</strong> <input type="text" size="40" name="prijmeni">
+        <strong>Titul za:</strong> <input type="text" size="15" name="titulZa"></p>
 
         <p><strong>Email:</strong> <input type="email" size="50" name="email"></p>
 
@@ -42,6 +46,26 @@
         <input type="checkbox" name="c4" value="ON">lyžováni
         <input type="checkbox" name="c5" value="ON">kino
         <input type="checkbox" name="c6" value="ON">pc hry</p>
+
+        <p><strong>Povolání:</strong>
+        <select size="1" name="povolani">
+            <option value="programator">Programátor</option>
+            <option value="ucitel">Učitel</option>
+            <option value="lekar">Lékař</option>
+            <option value="ucetni">Účetní</option>
+            <option value="manazer">Manažer</option>
+            <option value="prodavac">Prodavač</option>
+            <option value="kuchar">Kuchař</option>
+            <option value="ridic">Řidič</option>
+            <option value="elektrikar">Elektrikář</option>
+            <option value="grafik">Grafik</option>
+        </select></p>
+
+        <p><strong>Něco víc o sobě:</strong><br>
+        <textarea rows="5" cols="100" name="oblast"></textarea></p>
+
+        <input type="reset" value="Obnovit" name="reset">
+        <input type="submit" value="Odeslat" name="submit">
     </form>
 </body>
 </html>
