@@ -18,8 +18,8 @@
         accent-color: black;
         border-color: gray;
     }
-    
-    input:hover, input:active, textarea:hover, textarea:active {
+
+    input:hover, textarea:hover {
         border-color: blue;
     }
   </style>
@@ -27,10 +27,12 @@
     <h1>registracni formular</h1>
 
     <form name="dotaznik">
+        <fieldset><legend>Osobní údaje</legend>
         <p><strong>Titul před:</strong> <input type="text" size="15" name="titulPred">
         <strong>Jmeno:</strong> <input id="jmin" type="text" size="60" name="jmeno">
         <strong>Prijmení:</strong> <input type="text" size="40" name="prijmeni">
         <strong>Titul za:</strong> <input type="text" size="15" name="titulZa"></p>
+        
 
         <p><strong>Email:</strong> <input type="email" size="50" name="email"></p>
 
@@ -38,7 +40,8 @@
         <input type="radio" value="muž" checked name="pohlavi"> muž
         <input type="radio" value="žena" name="pohlavi"> žena
         <input type="radio" value="jine" name="pohlavi">jiné</p>
-
+        </fieldset>
+        
         <p><strong>Zájmy:</strong>
         <input type="checkbox" checked name="c1" value="ON">turistika
         <input type="checkbox" checked name="c2" value="ON">cyklistika
