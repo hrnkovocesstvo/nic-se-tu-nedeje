@@ -53,7 +53,7 @@
                 .replace(/[-_]/g, ' ');
 
             // Set path relative to your site root
-            a.href = `/${repo}/${targetFolder}/${file.name}`;
+            a.href = `/${repo}/${targetFolder}${file.name}`;
             a.textContent = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);
 
             li.appendChild(a);
