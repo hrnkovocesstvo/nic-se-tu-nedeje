@@ -1,17 +1,17 @@
 .vlak {
-    background: url('lokomotiva.png') no-repeat;
+    background: url('pictures/lokomotiva.png') no-repeat;
     padding-left: 100px;
     height: 64px;
     list-style-type: none;
 }
 
 .vlak li {
-    background: url('vagon.png') no-repeat;
+    background: url('pictures/vagon.png') no-repeat;
     float: left;
     width: 75px;
     margin-right: 5px;
     padding-top: 25px;
     text-align: center;
-    color: white;
+    color: black;
     height: 64px;
 }
