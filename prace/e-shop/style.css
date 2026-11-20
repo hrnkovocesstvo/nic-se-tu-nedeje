@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+
+#hlavninadpis {
+    color: yellow;
+    font-size: 45px;
+    text-align: center;
+}
+
+.vyrobeknadpis{ 
+    color: white;
+    font-weight: bold;
+}
+
+.vyrobekcena{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    color: red;
+    font-size: 30px;
+}
+
+p {
+    text-align: justify;
+}
+
+.devider{
+    margin-top: 50px;
+}
